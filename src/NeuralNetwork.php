@@ -6,7 +6,9 @@ class NeuralNetwork
 {
     const LABELS = 10;
 
+    // This will be a one dimensional array (vector) [10]
     private $b;
+    // This will be a two dimensional array (matrix) [784x10]
     private $W;
 
     /**
@@ -54,6 +56,7 @@ class NeuralNetwork
     {
         $activations = [];
 
+        // Computes: Wx + b
         for ($i = 0; $i < self::LABELS; $i++) {
             $activations[$i] = $this->b[$i];
 
@@ -76,9 +79,11 @@ class NeuralNetwork
         $activations = $this->hypothesis($image);
 
         for ($i = 0; $i < self::LABELS; $i++) {
+            // Uses the derivative of the softmax function
             $bGradPart = ($i === $label) ? $activations[$i] - 1 : $activations[$i];
 
             for ($j = 0; $j < Dataset::IMAGE_SIZE; $j++) {
+                // Gradient is the product of the bias gradient and the input activation
                 $WGrad[$i][$j] += $bGradPart * $image[$j];
             }
 
