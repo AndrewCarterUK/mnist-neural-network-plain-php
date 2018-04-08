@@ -45,3 +45,5 @@ Step 0009	Average Loss 1.74	Accuracy: 0.55
 Step 0010	Average Loss 1.24	Accuracy: 0.56
 ...
 ```
+
+![training evolution](https://res.cloudinary.com/andrewcarteruk/image/upload/v1523189356/training-evolution_hhbsfb.png)
