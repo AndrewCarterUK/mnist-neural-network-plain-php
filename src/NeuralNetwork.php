@@ -4,8 +4,6 @@ namespace MNIST;
 
 class NeuralNetwork
 {
-    const LABELS = 10;
-
     // This will be a one dimensional array (vector) [10]
     private $b;
     // This will be a two dimensional array (matrix) [784x10]
@@ -19,7 +17,7 @@ class NeuralNetwork
         $this->b = [];
         $this->W = [];
 
-        for ($i = 0; $i < self::LABELS; $i++) {
+        for ($i = 0; $i < Dataset::LABELS; $i++) {
             $this->b[$i] = random_int(1, 1000) / 1000;
             $this->W[$i] = [];
 
@@ -57,7 +55,7 @@ class NeuralNetwork
         $activations = [];
 
         // Computes: Wx + b
-        for ($i = 0; $i < self::LABELS; $i++) {
+        for ($i = 0; $i < Dataset::LABELS; $i++) {
             $activations[$i] = $this->b[$i];
 
             for ($j = 0; $j < Dataset::IMAGE_SIZE; $j++) {
@@ -78,7 +76,7 @@ class NeuralNetwork
     {
         $activations = $this->hypothesis($image);
 
-        for ($i = 0; $i < self::LABELS; $i++) {
+        for ($i = 0; $i < Dataset::LABELS; $i++) {
             // Uses the derivative of the softmax function
             $bGradPart = ($i === $label) ? $activations[$i] - 1 : $activations[$i];
 
@@ -103,8 +101,8 @@ class NeuralNetwork
     public function trainingStep(Dataset $dataset, float $learningRate): float
     {
         // Zero init the gradients
-        $bGrad = array_fill(0, self::LABELS, 0);
-        $WGrad = array_fill(0, self::LABELS, array_fill(0, Dataset::IMAGE_SIZE, 0));
+        $bGrad = array_fill(0, Dataset::LABELS, 0);
+        $WGrad = array_fill(0, Dataset::LABELS, array_fill(0, Dataset::IMAGE_SIZE, 0));
 
         $totalLoss = 0;
         $size = $dataset->getSize();
@@ -115,7 +113,7 @@ class NeuralNetwork
         }
 
         // Adjust the weights and bias vector using the gradient and the learning rate
-        for ($i = 0; $i < self::LABELS; $i++) {
+        for ($i = 0; $i < Dataset::LABELS; $i++) {
             $this->b[$i] -= $learningRate * $bGrad[$i] / $size;
 
             for ($j = 0; $j < Dataset::IMAGE_SIZE; $j++) {
