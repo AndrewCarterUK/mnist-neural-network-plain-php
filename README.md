@@ -11,8 +11,8 @@ By [AndrewCarterUK ![(Twitter)](http://i.imgur.com/wWzX9uB.png)](https://twitter
 ## Contents
 
 - [mnist.php](mnist.php): Glue code that runs the algorithm steps and reports algorithm accuracy
-- [Dataset.php](src/Dataset/Dataset.php): Dataset container object
-- [DatasetReader.php](src/Dataset/DatasetReader.php): Retrieves images and labels from the MNIST dataset
+- [Dataset.php](src/Dataset.php): Dataset container object
+- [DatasetReader.php](src/DatasetReader.php): Retrieves images and labels from the MNIST dataset
 - [NeuralNetwork.php](src/NeuralNetwork.php): Implements training and prediction routines for a simple neural network
 
 ## Usage
