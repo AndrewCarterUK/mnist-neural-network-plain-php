@@ -5,7 +5,7 @@ This source code seeks to replicate the (now removed) [MNIST For ML Beginners](h
 
 The task is to recognise digits, such as the ones below, as accurately as possible.
 
-![MNIST digits](https://www.tensorflow.org/versions/r1.1/images/MNIST.png)
+![MNIST digits](https://web.archive.org/web/20180801165522im_/https://www.tensorflow.org/versions/r1.1/images/MNIST.png)
 
 By [AndrewCarterUK ![(Twitter)](http://i.imgur.com/wWzX9uB.png)](https://twitter.com/AndrewCarterUK)
 
