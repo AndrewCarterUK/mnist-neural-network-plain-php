@@ -1,6 +1,7 @@
 # MNIST Neural Network in PHP
 
-This source code seeks to replicate the [MNIST For ML Beginners](https://www.tensorflow.org/versions/r1.1/get_started/mnist/beginners) tutorial from the Tensorflow website using straight forward PHP code. Hopefully, this example will make that tutorial a bit more manageable for PHP developers.
+
+This source code seeks to replicate the (now removed) [MNIST For ML Beginners](https://web.archive.org/web/20180801165522/https://www.tensorflow.org/versions/r1.1/get_started/mnist/beginners) tutorial from the Tensorflow website using straight forward PHP code. Hopefully, this example will make that tutorial a bit more manageable for PHP developers.
 
 The task is to recognise digits, such as the ones below, as accurately as possible.
 
